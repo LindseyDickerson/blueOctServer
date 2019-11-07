@@ -25,8 +25,8 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: true
         },
         delivered: {
-            type: DataTypes.STRING,
-            allowNull: true
+            type: DataTypes.BOOLEAN,
+            allowNull: false
         },
         owner: {
             type: DataTypes.INTEGER
