@@ -26,7 +26,7 @@ router.post('/createuser', function (req, res) {
                 email: email,
                 name: name,
                 message: 'User Created',
-                sesionToken: token
+                sessionToken: token
             });
         },
         function createError(err) {
@@ -38,7 +38,7 @@ router.post('/createuser', function (req, res) {
 /***************************
  * Signin Endpoint
 ***************************/
-router.post('/signin', function(req, res) {
+router.post('/login', function(req, res) {
     User.findOne( {where: {email: req.body.user.email } } ).then(
         function(user) {
             if(user) {
@@ -48,7 +48,7 @@ router.post('/signin', function(req, res) {
                         res.json({
                             user: user, 
                             message: "Now that's an authentication!",
-                            sesionToken: token
+                            sessionToken: token
                         });
                     } else {
                         res.status(502).send({error: "what a failure"});

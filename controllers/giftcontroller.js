@@ -91,7 +91,7 @@ router.delete('/delete/:id', validateSession, function(req, res) {
 //     .then(gift => res.status(200).json(gift))
 //     .catch(err => res.status(500).json({error: err}))
 // })
-router.get('/all/:recipient', function (req, res) {
+router.get('/all/:recipient', validateSession, function (req, res) {
     let recipient = req.params.recipient;
     Gift.findAll({
       where: { recipient: recipient }
