@@ -25,7 +25,7 @@
             allowNull: true
         },
         delivered: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false
         },
         owner: {
