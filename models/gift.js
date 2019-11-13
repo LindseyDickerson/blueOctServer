@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+ module.exports = (sequelize, DataTypes) => {
     const Gift = sequelize.define('gift', {
         recipient: {
             type: DataTypes.STRING,
