@@ -93,8 +93,10 @@ router.delete('/delete/:id', validateSession, function(req, res) {
 // })
 router.get('/all/:recipient', validateSession, function (req, res) {
     let recipient = req.params.recipient;
+    let userid = req.user.id;
+
     Gift.findAll({
-      where: { recipient: recipient }
+      where: { owner: userid,  recipient: recipient  }
     })
       .then(
         function findAllSuccess(recipient) {
