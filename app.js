@@ -5,7 +5,7 @@ const gifts = require('./controllers/giftcontroller');
 const user = require('./controllers/usercontroller');
 const sequelize = require('./db');
 
-sequelize.sync({force: true}); //to reset table pass in {force: true}, save, check pgAdmin, then take out and resave. THIS WILL RESET TABLES AND DATA CAN'T BE RECOVERED
+sequelize.sync(); //to reset table pass in {force: true}, save, check pgAdmin, then take out and resave. THIS WILL RESET TABLES AND DATA CAN'T BE RECOVERED
 
 app.use(express.json());
 app.use(require('./middleware/headers'));
